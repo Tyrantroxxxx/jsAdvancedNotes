@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //创建类class
+        class Star {
+            constructor(uname, age) {
+                this.uname = uname;
+                this.age = age;
+            };
+            //类中创建函数不要写function，多个函数和方法之间不需要逗号分隔
+            sing(song) {
+                console.log(song);
+
+            }
+        };
+        //利用类创建对象
+        var ldh = new Star('刘德华', 18);
+        console.log(ldh.uname);
+        console.log(ldh.age);
+        ldh.sing('冰雨');
+        //类的继承
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            };
+            sum() {
+                console.log(this.x + this.y);
+            }
+        };
+        //Son这个类继承了Father这个类中的属性和方法
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y); //调用了父类中的构造函数constructor
+            };
+        };
+        var son = new Son(3, 4);
+        var son1 = new Son(4, 6);
+        son.sum();
+        son1.sum();
+    </script>
+</body>
+
+</html>
